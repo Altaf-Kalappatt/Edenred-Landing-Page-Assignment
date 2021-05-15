@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<title>Edenred Landing Page</title>
+	</head>
+	<body>
+		<header>
+			<div class="logo-container">
+				<img src="./img/logo.svg" alt="logo" />
+				<h4 class="logo">Welcome</h4>
+			</div>
+			<nav>
+				<ul class="nav-links">
+					<li><a class="nav-link" href="https://www.edenred.com/en/discover-group/who-are-we">About Us</a></li>
+					<li><a class="nav-link" href="https://edenred.ae/#">Products</a></li>
+					<li><a class="nav-link" href="https://edenred.ae/contact-us/">Contact</a></li>
+				</ul>
+			</nav>
+		<!--	<div class="Linkedin">
+				<img src="./img/LinkedIn.png" alt="LinkedIn"/>
+			</div>-->
+		</header>
+
+		<main>
+			<section class="presentation">
+				<div class="introduction">
+					<div class="intro-text">
+						<h1>The Future Of Payroll</h1>
+						<p>
+							Process, schedule and track payroll in a 
+							few clicks with Edenred Payroll.
+						</p>
+					</div>
+					<div class="cta">
+						<button class="cta-ep" onclick="location.href='https://edenred.ae/edenred-payroll/';">Edenred Payroll</button>
+						<button class="cta-c3" onclick="location.href='https://edenred.ae/c3pay/';">C3Pay</button>
+					</div>
+				</div>
+				<div class="cover">
+					<img src="./img/Edenred_Logo_(depuis_2017) (1).png" alt="Edenred Logo" />
+				</div>
+				<div class="cover">
+					<img src="./img/Section-1.png" alt="Edenred Payroll" />
+				</div>
+				<div class="cover">
+					<img src="./img/uo5369h9mbc0bkd84gqulgjeam.png" alt="Payroll" />
+				</div>
+			</section>
+
+			<div class="laptop-select">
+				<img src="./img/arrow-left.svg" alt="" / class="arrow" onclick="slideIndex = slideIndex - 1; if (slideIndex == 0) slideIndex = 3; slides[slideIndex-1].style.display = 'flex';">
+				<img src="./img/dot.svg" alt="" class="dot"/>
+				<img src="./img/dot-full.svg" alt="" class="dot"/>
+				<img src="./img/dot-full.svg" alt="" class="dot"/>
+				<img src="./img/arrow-right.svg" alt="" / class="arrow" onclick="slideIndex = slideIndex + 1; if (slideIndex > 3) slideIndex = 1; slides[slideIndex-1].style.display = 'flex';">
+			</div>
+
+			<img class="big-circle" src="./img/big-eclipse.svg" alt="" />
+			<img class="medium-circle" src="./img/mid-eclipse.svg" alt="" />
+			<img class="small-circle" src="./img/small-eclipse.svg" alt="" />
+		</main>
+		<script type="text/javascript">
+			var slideIndex = 0;
+			var next=0;
+			showSlides();
+
+			/*function nextSlide(n) {
+				showSlides(n); 
+			}*/
+
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("cover");
+				var dot = document.getElementsByClassName("dot");
+				
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				
+				slideIndex++;
+				
+				if (slideIndex > slides.length) {slideIndex = 1}
+				
+				slides[slideIndex-1].style.display = "flex";
+				
+				for (var i = dot.length - 1; i >= 0; i--) {
+					if (i==slideIndex-1) {dot[i].src = "./img/dot.svg";}
+					else dot[i].src = "./img/dot-full.svg";
+				}
+
+				setTimeout(showSlides, 4000);
+			}
+		</script>
+	</body>
+</html>
